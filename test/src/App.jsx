@@ -1,14 +1,12 @@
 // App.jsx
 import React from 'react';
 import './index.css';
-import myImage from './my-acetrack-qrcode.jpeg';
 import { ThreeDCardDemo } from './test';
-
 
 function App() {
   return (
     <div>
-      <ThreeDCardDemo imageSrc={myImage} /> {/* Pass the image as a prop */}
+      <ThreeDCardDemo imageSrc="/my-acetrack-qrcode.jpeg" /> {/* Ensure the path starts with / */}
     </div>
   );
 }
