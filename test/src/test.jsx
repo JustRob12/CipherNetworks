@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import { AuroraBackground } from "../src/components/ui/aurora-background";
 import cbLogo from "./assets/cnnet.png";
+<link rel="manifest" href="/manifest.json" />
+
 
 export function AuroraBackgroundDemo() {
   return (
