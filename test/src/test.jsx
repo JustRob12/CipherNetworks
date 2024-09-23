@@ -1,4 +1,5 @@
 import React from 'react';
+import id from "./assets/my-acetrack-qrcode.jpeg";
 import { CardBody, CardContainer, CardItem, MouseEnterProvider } from './components/ui/3d-card';
 
 export function ThreeDCardDemo() {
@@ -30,7 +31,7 @@ export function ThreeDCardDemo() {
           {/* Image */}
           <CardItem translateZ="100" className="w-full mt-4">
             <img
-              src="my-acetrack-qrcode.jpeg"
+              src={id}
               className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl"
               alt="thumbnail"
             />
