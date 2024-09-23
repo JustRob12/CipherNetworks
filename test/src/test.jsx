@@ -30,7 +30,7 @@ export function ThreeDCardDemo() {
           {/* Image */}
           <CardItem translateZ="100" className="w-full mt-4">
             <img
-              src="my-acetrack-qrcode.jpeg"
+              src="./src/my-acetrack-qrcode.jpeg"
               className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl"
               alt="thumbnail"
             />
