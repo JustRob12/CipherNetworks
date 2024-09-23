@@ -1,64 +1,36 @@
-import React from 'react';
-import id from "./assets/my-acetrack-qrcode.jpeg";
-import { CardBody, CardContainer, CardItem, MouseEnterProvider } from './components/ui/3d-card';
+"use client";
 
-export function ThreeDCardDemo() {
+import { motion } from "framer-motion";
+import React from "react";
+import { AuroraBackground } from "../src/components/ui/aurora-background";
+import cbLogo from "./assets/cnnet.png";
+
+export function AuroraBackgroundDemo() {
   return (
-    <MouseEnterProvider>
-      <CardContainer className="inter-var">
-        <CardBody
-          
-          style={{ height: '5in', width: '4.5in' }} // Height and width in inches
-        >
-          
-          {/* Title */}
-          <CardItem
-            translateZ="50"
-            className="text-xl font-bold text-neutral-600 dark:text-white"
-          >
-            
-          </CardItem>
+    <AuroraBackground className="bg-black dark:bg-neutral-900">
+      <motion.div
+        initial={{ opacity: 0.0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="relative flex flex-col gap-4 items-center justify-center px-4"
+      >
+        {/* Add your logo here */}
+        <img src={cbLogo} alt="CipherNet Logo" className="w-20 h-20 md:w-40 md:h-40" />
 
-          {/* Description */}
-          <CardItem
-            as="p"
-            translateZ="60"
-            className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
-          >
-            
-          </CardItem>
-
-          {/* Image */}
-          <CardItem translateZ="100" className="w-full mt-4">
-            <img
-              src={id}
-              className="h-full w-full object-cover rounded-xl group-hover/card:shadow-xl"
-              alt="thumbnail"
-            />
-          </CardItem>
-
-          {/* Footer Section */}
-          <div className="flex justify-between items-center mt-20">
-            <CardItem
-              translateZ={20}
-              as="a"
-              href="https://twitter.com/mannupaaji" 
-              target="_blank"
-              className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-            >
-              Try now →
-            </CardItem>
-            <CardItem
-              translateZ={20}
-              as="button"
-              className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-            >
-              Sign up
-            </CardItem>
-          </div>
-
-        </CardBody>
-      </CardContainer>
-    </MouseEnterProvider>
+        <div className="text-3xl md:text-7xl font-bold text-center" style={{ color: "#17e0e7" }}>
+          CipherNet Coming Soon.
+        </div>
+        <div className="font-extralight text-base md:text-2xl py-4" style={{ color: "white" }}>
+          Empowering BSIT students through streamlined management and connected experiences.
+        </div>
+        <button className="bg-white dark:bg-black rounded-full w-fit text-black dark:text-white px-4 py-2">
+          Visit Me
+        </button>
+      </motion.div>
+    </AuroraBackground>
   );
 }
