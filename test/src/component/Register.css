@@ -7,7 +7,7 @@
 }
 
 .register-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(235, 232, 232, 0.1);
   padding: 20px; /* Reduced padding for a smaller form */
   border-radius: 15px; /* Adjusted border radius */
   backdrop-filter: blur(10px);

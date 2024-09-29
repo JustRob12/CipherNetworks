@@ -66,7 +66,7 @@ export function Register({ onNavigateToLogin }) {
                 value={schoolId}
                 onChange={(e) => setSchoolId(e.target.value)}
                 required
-                placeholder="2022-2022"
+                placeholder="0000-0000"
               />
             </div>
             <div className="input-group half">
