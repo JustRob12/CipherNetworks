@@ -19,7 +19,7 @@ export function Register({ onNavigateToLogin }) {
   return (
     <div className="register-container">
       <div className="register-box">
-        <h1 className="register-title">Register</h1>
+        <h1 className="register-title">Sign Up</h1>
         <form onSubmit={handleSubmit} className="register-form">
           <div className="form-row">
             <div className="input-group half">
