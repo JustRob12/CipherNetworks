@@ -1,95 +1,109 @@
 .register-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-  }
-  
-  .register-box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .register-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  
-  .register-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .input-group label {
-    font-size: 0.875rem;
-    color: #e0e0e0;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 0.75rem;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-  }
-  
-  .input-group input:focus {
-    outline: none;
-    border-color: #18eaf1;
-  }
-  
-  .register-button {
-    width: 100%;
-    padding: 0.75rem;
-    background: #18eaf1;
-    color: #000000;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .register-button:hover {
-    background: #15d1d7;
-  }
-  
-  .login-link {
-    margin-top: 1.5rem;
-    text-align: center;
-    color: #e0e0e0;
-  }
-  
-  .login-button {
-    background: none;
-    border: none;
-    color: #18eaf1;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    margin-left: 0.5rem;
-  }
-  
-  .login-button:hover {
-    color: #15d1d7;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.register-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px; /* Reduced padding for a smaller form */
+  border-radius: 15px; /* Adjusted border radius */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Reduced shadow size */
+  width: 90%; /* Allow the box to be responsive */
+  max-width: 400px; /* Set maximum width to fit better on screens */
+}
+
+.register-title {
+  font-size: 1.5rem; /* Smaller title size */
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem; /* Reduced margin */
+  text-align: center;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem; /* Adjusted gap */
+}
+
+.form-row {
+  display: flex;
+  gap: 0.5rem; /* Reduced spacing between inputs */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group.half {
+  flex: 1; /* Allows two inputs in a row to take equal width */
+}
+
+.input-group.full {
+  width: 100%; /* Makes the input take the full width */
+}
+
+.input-group label {
+  font-size: 0.875rem;
+  color: #e0e0e0;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.5rem; /* Reduced padding */
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #000000;
+  font-size: 0.9rem; /* Smaller font size */
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: #18eaf1;
+}
+
+.register-button {
+  width: 100%;
+  padding: 0.5rem; /* Reduced padding */
+  background: #18eaf1;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem; /* Smaller button font size */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+  background: #15d1d7;
+}
+
+.login-link {
+  margin-top: 1rem; /* Reduced margin */
+  text-align: center;
+  color: #e0e0e0;
+}
+
+.login-button {
+  background: none;
+  border: none;
+  color: #18eaf1;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.login-button:hover {
+  color: #15d1d7;
+}

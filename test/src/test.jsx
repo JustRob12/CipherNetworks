@@ -30,7 +30,7 @@ export function AuroraBackgroundDemo() {
       }}
     >
       {/* Logo at the top */}
-      <div className="absolute top-4 left-4"> {/* Adjust position as needed */}
+      <div className="absolute top-10 left-10"> {/* Adjust position as needed */}
         <img src={logo} alt="Logo" className="h-12 w-auto" /> {/* Adjust size as needed */}
       </div>
 
