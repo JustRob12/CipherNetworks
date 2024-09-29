@@ -1,8 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 
 export function Login({ onNavigateToRegister }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -50,7 +54,7 @@ export function Login({ onNavigateToRegister }) {
             </button>
             <button
               type="button"
-              onClick={onNavigateToRegister}
+              onClick={onNavigateToRegister} // Navigate to Register
               className="flex-1 py-2 px-4 border border-cyan-400 rounded-md shadow-sm text-sm font-medium text-cyan-400 bg-transparent hover:bg-cyan-400 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-colors duration-200"
             >
               Register

@@ -1,11 +1,26 @@
 "use client";
 
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuroraBackground } from "../src/components/ui/aurora-background";
 import { Login } from "./component/Login";
+import { Register } from "./component/Register";
 
 export function AuroraBackgroundDemo() {
+  const [currentView, setCurrentView] = useState('login');
+  const navigate = useNavigate();
+
+  const handleNavigateToRegister = () => {
+    setCurrentView('register');
+    navigate('/register');
+  };
+
+  const handleNavigateToLogin = () => {
+    setCurrentView('login');
+    navigate('/login');
+  };
+
   return (
     <AuroraBackground
       className="bg-black dark:bg-neutral-900 relative overflow-hidden"
@@ -23,11 +38,12 @@ export function AuroraBackgroundDemo() {
         }}
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
-        {/* Only the background remains, no logo or text */}
-        
+        {currentView === 'login' ? (
+          <Login onNavigateToRegister={handleNavigateToRegister} />
+        ) : (
+          <Register onNavigateToLogin={handleNavigateToLogin} />
+        )}
       </motion.div>
-      <Login />
     </AuroraBackground>
-    
   );
 }

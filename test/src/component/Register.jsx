@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './Register.css'; // Import your CSS file
 
 export function Register({ onNavigateToLogin }) {
   const [email, setEmail] = useState('');
@@ -7,7 +8,6 @@ export function Register({ onNavigateToLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle registration logic here
     console.log('Registration attempted with:', email, password);
   };
 
