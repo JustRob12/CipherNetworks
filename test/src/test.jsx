@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuroraBackground } from "../src/components/ui/aurora-background";
+import logo from './assets/cnnet.png'; // Adjust the path to your logo file
 import { Login } from "./component/Login";
 import { Register } from "./component/Register";
 
@@ -28,6 +29,11 @@ export function AuroraBackgroundDemo() {
         background: "linear-gradient(360deg, black, #18eaf1)",
       }}
     >
+      {/* Logo at the top */}
+      <div className="absolute top-4 left-4"> {/* Adjust position as needed */}
+        <img src={logo} alt="Logo" className="h-12 w-auto" /> {/* Adjust size as needed */}
+      </div>
+
       <motion.div
         initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
