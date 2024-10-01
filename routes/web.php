@@ -1,23 +1,21 @@
-<?php
-// routes/web.php
 
-require_once (__DIR__.'/../app/controllers/StudentController.php');
+<?php
+require_once './app/controllers/StudentCotroller.php';
 
 $controller = new StudentController();
 
-// Capture the request URI
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 
-// Output the current request URI for debugging
-
-
-if ($uri === '/students') {
+if ($uri == '/students' && $requestMethod == 'GET') {
     $controller->index();
-} elseif ($uri === '/students/create') {
-    $controller->create();
-} elseif ($uri === '/students/store') {
+} elseif ($uri == '/students/store' && $requestMethod == 'POST') {
     $controller->store();
+} elseif (preg_match('/\/students\/(\d+)/', $uri, $matches) && $requestMethod == 'GET') {
+    $controller->show($matches[1]);
+} elseif (preg_match('/\/students\/(\d+)/', $uri, $matches) && $requestMethod == 'DELETE') {
+    $controller->delete($matches[1]);
 } else {
     // Handle unknown routes
-    echo "404 Not Found";
+    echo json_encode(["message" => "404 Not Found"]);
 }

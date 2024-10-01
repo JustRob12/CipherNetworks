@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuroraBackground } from "../src/components/ui/aurora-background";
-import logo from './assets/cnnet.png'; // Adjust the path to your logo file
+import logo from './assets/cnnet.png';
 import { Login } from "./component/Login";
 import { Register } from "./component/Register";
 
