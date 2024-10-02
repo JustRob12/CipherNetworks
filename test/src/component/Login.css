@@ -2,66 +2,69 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #f0f0f0, #ffffff);
     min-height: 100vh;
-  }
-  
-  .login-container {
+}
+
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-  }
-  
-  .login-box {
+}
+
+.login-box {
     background: rgb(0, 0, 0);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-  }
-  
-  .login-title {
+}
+
+.login-title {
     text-align: center;
     color: #333;
     margin-bottom: 30px;
     font-size: 28px;
     font-weight: 700;
-  }
-  
-  .login-form {
+}
+
+.login-form {
     display: flex;
     flex-direction: column;
-  }
-  
-  .input-group {
+}
+
+.input-group {
     position: relative;
     margin-bottom: 30px;
-  }
-  
-  input {
+}
+
+input,
+select {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
     color: #333;
     border: none;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid #ddd; /* Default border color */
     outline: none;
     background: transparent;
     transition: border-color 0.3s;
-  }
-  
-  input:focus {
-    border-bottom-color: #4CAF50;
-  }
-  
-  label {
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none; /* Remove default outline */
+    border-bottom-color: #18eaf1; /* Change border color to cyan */
+}
+
+label {
     position: absolute;
     top: 0;
     left: 0;
@@ -70,77 +73,222 @@
     color: #666;
     pointer-events: none;
     transition: 0.3s ease all;
-  }
-  
-  input:focus ~ label,
-  input:valid ~ label {
+}
+
+input:focus ~ label,
+input:valid ~ label {
     top: -20px;
     font-size: 14px;
-    color: #4CAF50;
-  }
-  
-  .login-button {
+    color: #4CAF50; /* Label color on focus */
+}
+
+.login-button {
     width: 100%;
     padding: 12px;
     background: linear-gradient(135deg, #4CAF50, #45a049);
-
     border: none;
     border-radius: 25px;
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s, transform 0.1s;
-  }
-  
-  .login-button:hover {
+}
+
+.login-button:hover {
     background: linear-gradient(135deg, #45a049, #4CAF50);
-  }
-  
-  .login-button:active {
+}
+
+.login-button:active {
     transform: scale(0.98);
-  }
-  
-  .login-footer {
+}
+
+.login-footer {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-  }
-  
-  .forgot-password,
-  .create-account {
+}
+
+.forgot-password,
+.create-account {
     color: #4CAF50;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s;
-  }
-  
-  .forgot-password:hover,
-  .create-account:hover {
+}
+
+.forgot-password:hover,
+.create-account:hover {
     color: #45a049;
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .login-box {
-      padding: 30px;
-    }
-  
-    .login-title {
-      font-size: 24px;
+        padding: 30px;
     }
 
-    
-  
+    .login-title {
+        font-size: 24px;
+    }
+
     input,
+    select,
     label {
-      font-size: 14px;
-      color: black;
+        font-size: 14px;
+        color: black;
     }
-  
+
     .login-button {
-      font-size: 14px;
+        font-size: 14px;
     }
-  
+
     .forgot-password,
     .create-account {
-      font-size: 12px;
+        font-size: 12px;
     }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #f0f0f0, #ffffff);
+  min-height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-box {
+  background: rgb(0, 0, 0);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #333;
+  border: none;
+  border-bottom: 2px solid #ddd; /* Default border color */
+  outline: none;
+  background: transparent;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none; /* Remove default outline */
+  border-bottom-color: #18eaf1; /* Change border color to cyan */
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #666;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #4CAF50; /* Label color on focus */
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.1s;
+}
+
+.login-button:hover {
+  background: linear-gradient(135deg, #45a049, #4CAF50);
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+.login-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.forgot-password,
+.create-account {
+  color: #4CAF50;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.forgot-password:hover,
+.create-account:hover {
+  color: #45a049;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+      padding: 30px;
   }
+
+  .login-title {
+      font-size: 24px;
+  }
+
+  input,
+  select,
+  label {
+      font-size: 14px;
+      color: black;
+  }
+
+  .login-button {
+      font-size: 14px;
+  }
+
+  .forgot-password,
+  .create-account {
+      font-size: 12px;
+  }
+}

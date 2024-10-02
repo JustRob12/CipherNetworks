@@ -1,0 +1,52 @@
+.header-container {
+  position: fixed; /* Keep the header fixed at the top */
+  top: 0; /* Align it to the top */
+  left: 0; /* Align it to the left */
+  right: 0; /* Align it to the right */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2); /* Slightly transparent background */
+  color: rgb(0, 255, 234);
+  z-index: 1000; /* Ensure it appears on top of other content */
+}
+
+.header-left .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-right .contact-button {
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid cyan; /* Add cyan border */
+  border-radius: 5px;
+  transition: border-color 0.3s ease; /* Transition for border color */
+  
+  /* Added margin to create gap */
+  margin-left: 200px; /* Adjust the value for desired spacing */
+}
+
+/* Optional: Change border color on hover */
+
+/* Add padding-top to the main content area */
+.main-content {
+  padding-top: 80px; /* Adjust this value based on the header height */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .header-container {
+      padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .header-left .logo {
+      font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .header-right .contact-button {
+      font-size: 14px; /* Adjust button font size for smaller screens */
+  }
+}

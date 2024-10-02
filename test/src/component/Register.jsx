@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import logo from '../assets/cn192.png'; // Adjust the path based on where you save the logo image
 import './Register.css'; // Import your CSS file
 
 export function Register() {
@@ -24,7 +25,15 @@ export function Register() {
 
   return (
     <div className="register-container">
+      
       <div className="register-box">
+
+        {/* Logo and Name Section */}
+        <div className="flex items-center mb-7 gap-2">
+          <img src={logo} alt="CipherNet Logo" className="w-8 h-8" /> {/* Adjust width and height as needed */}
+          <p className="text-lg text-white font-bold">CipherNet</p> {/* Name text */}
+        </div>
+
         <h1 className="register-title">Sign Up</h1>
         <form onSubmit={handleSubmit} className="register-form">
           <div className="form-row">
