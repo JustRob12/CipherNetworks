@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import './Register.css'; // Import your CSS file
 
-export function Register({ onNavigateToLogin }) {
+export function Register() {
+  const navigate = useNavigate(); // Initialize navigate
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [middleName, setMiddleName] = useState('');
@@ -13,7 +15,11 @@ export function Register({ onNavigateToLogin }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // You can add your registration logic here, e.g., API call
     console.log('Registration attempted with:', firstName, lastName, middleName, schoolId, year, email, password);
+    
+    // Optionally navigate to a success page or login page after successful registration
+    navigate('/login'); // Redirect to the login page after registration
   };
 
   return (
@@ -130,7 +136,7 @@ export function Register({ onNavigateToLogin }) {
         </form>
         <div className="login-link">
           Already have an account? 
-          <button onClick={onNavigateToLogin} className="login-button">
+          <button onClick={() => navigate('/login')} className="login-button">
             Log In
           </button>
         </div>

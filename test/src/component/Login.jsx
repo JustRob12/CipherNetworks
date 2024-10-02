@@ -1,17 +1,28 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-
-export function Login({ onNavigateToRegister }) {
+export function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
   const navigate = useNavigate();
 
+  // Dummy credentials for the login
+  const dummyAccount = {
+    email: "admin@admin",
+    password: "123"
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login attempted with:', email, password);
+
+    // Check if entered email and password match the dummy account
+    if (email === dummyAccount.email && password === dummyAccount.password) {
+      console.log('Login successful');
+      navigate('/dashboard'); // Navigate to Dashboard on successful login
+    } else {
+      console.log('Invalid credentials');
+    }
   };
 
   return (
@@ -29,7 +40,7 @@ export function Login({ onNavigateToRegister }) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-3 py-2 bg-white bg-opacity-20 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
+              className="w-full px-3 py-2 bg-white bg-opacity-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
             />
           </div>
           <div>
@@ -42,7 +53,7 @@ export function Login({ onNavigateToRegister }) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full px-3 py-2 bg-white bg-opacity-20 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
+              className="w-full px-3 py-2 bg-white bg-opacity-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-white"
             />
           </div>
           <div className="flex space-x-4">
@@ -54,7 +65,7 @@ export function Login({ onNavigateToRegister }) {
             </button>
             <button
               type="button"
-              onClick={onNavigateToRegister} // Navigate to Register
+              onClick={() => navigate('/register')}
               className="flex-1 py-2 px-4 border border-cyan-400 rounded-md shadow-sm text-sm font-medium text-cyan-400 bg-transparent hover:bg-cyan-400 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-colors duration-200"
             >
               Register
