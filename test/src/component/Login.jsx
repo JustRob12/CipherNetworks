@@ -1,13 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import logo from '../assets/cn192.png';
+
+// Utility functions for token management
+const generateToken = () => {
+  // Generate a random token (for example purposes)
+  return Math.random().toString(36).substring(2, 15);
+};
+
+const refreshToken = () => {
+  const newToken = generateToken();
+  localStorage.setItem('refreshToken', newToken); // Store in localStorage
+  return newToken;
+};
 
 export function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [token, setToken] = useState('');
   
   const navigate = useNavigate();
-
 
   const dummyAccount = {
     email: "admin@admin",
@@ -26,15 +38,19 @@ export function Login() {
     }
   };
 
+  useEffect(() => {
+    const newToken = refreshToken(); // Refresh the token on component mount
+    setToken(newToken); // Update state with new token
+  }, []);
+
   return (
     <div className="flex flex-col gap-0 items-center justify-center px-4 min-h-screen">
       <div className="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-md shadow-lg max-w-md w-full">
         <div className="flex items-center mb-7 gap-2">
           <img src={logo} alt="CipherNet Logo" className="w-8 h-8" />
-        
         </div>
         <h1 className="text-3xl font-bold mb-1 text-left text-white">Welcome</h1>
-        <p className="mb-9">Fill in the form to login</p> {/* Adjusted margin-bottom */}
+        <p className="mb-9">Fill in the form to login</p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-1">
