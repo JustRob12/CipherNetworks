@@ -5,7 +5,7 @@ export function Header() {
   return (
     <header className="header-container">
       <div className="header-left">
-        <h1 className="logo">CODEBYTERS</h1>
+        <h1 className="logo">CipherNet</h1>
       </div>
       <div className="header-right">
         <a 

@@ -31,7 +31,7 @@ export function Register() {
         {/* Logo and Name Section */}
         <div className="flex items-center mb-7 gap-2">
           <img src={logo} alt="CipherNet Logo" className="w-8 h-8" /> {/* Adjust width and height as needed */}
-          <p className="text-lg text-white font-bold">CipherNet</p> {/* Name text */}
+          <p className="text-lg text-white font-bold"></p> {/* Name text */}
         </div>
 
         <h1 className="register-title">Sign Up</h1>

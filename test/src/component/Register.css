@@ -16,7 +16,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Reduced shadow size */
   width: 90%; /* Allow the box to be responsive */
   max-width: 400px; /* Set maximum width to fit better on screens */
-  margin-top: 150px; /* Ensure the box is centered vertically */
+  margin-top: 3px; /* Ensure the box is centered vertically */
   margin-bottom: auto;
 }
 
