@@ -60,7 +60,7 @@
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
-  color: #000000;
+  color: #ffffff;
   font-size: 0.9rem; /* Smaller font size */
   transition: border-color 0.3s ease;
 }

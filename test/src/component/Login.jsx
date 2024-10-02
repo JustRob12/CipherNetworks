@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import logo from '../assets/cn192.png'; // Adjust the path based on where you save the logo image
 
 export function Login() {
   const [email, setEmail] = useState('');
@@ -28,10 +29,15 @@ export function Login() {
   return (
     <div className="relative flex flex-col gap-4 items-center justify-center px-4 min-h-screen">
       <div className="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-md shadow-lg max-w-md w-full">
-        <h1 className="text-3xl font-bold mb-6 text-center text-white">Login</h1>
+        <div className="flex items-center mb-7 gap-2">
+          <img src={logo} alt="CipherNet Logo" className="w-8 h-8" /> {/* Adjust width and height as needed */}
+          <p className="text-lg text-white font-bold">CipherNet</p> {/* Name text */}
+        </div>
+        <h1 className="text-3xl font-bold mb-1 text-left text-white">Welcome</h1>
+        <p className="mb-10">Fill in the form to login</p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-1 ">
               Email
             </label>
             <input
