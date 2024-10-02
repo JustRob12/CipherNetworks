@@ -31,10 +31,10 @@ export function Login() {
       <div className="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-md shadow-lg max-w-md w-full">
         <div className="flex items-center mb-7 gap-2">
           <img src={logo} alt="CipherNet Logo" className="w-8 h-8" />
-          <p className="text-lg text-white font-bold">CipherNet</p>
+        
         </div>
         <h1 className="text-3xl font-bold mb-1 text-left text-white">Welcome</h1>
-        <p className="mb-5">Fill in the form to login</p> {/* Adjusted margin-bottom */}
+        <p className="mb-9">Fill in the form to login</p> {/* Adjusted margin-bottom */}
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-1">
